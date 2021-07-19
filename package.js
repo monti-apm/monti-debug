@@ -1,8 +1,8 @@
 Package.describe({
   summary: 'Full Stack Debugging Solution for Meteor',
-  version: '3.2.2',
-  git: 'https://github.com/kadirahq/meteor-debug',
-  name: "kadira:debug"
+  version: '3.3.0',
+  git: 'https://github.com/monti-apm/meteor-debug',
+  name: "montiapm:debug"
 });
 
 Npm.depends({
@@ -35,7 +35,7 @@ Package.onTest(function(api) {
 });
 
 function configure(api) {
-  api.export(['KadiraDebug']);
+  api.export(['KadiraDebug', 'MontiDebug']);
 
   api.versionsFrom('1.0');
   api.use('templating', {weak: true});
