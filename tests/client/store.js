@@ -99,7 +99,7 @@ function(test, done) {
         name: name,
         count: 2
       });
-
+      console.log('elapsed time', activity.elapsedTime);
       test.isTrue(activity.elapsedTime >= 20);
       done();
     }, 10);
