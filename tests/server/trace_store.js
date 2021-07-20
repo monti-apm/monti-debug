@@ -24,7 +24,7 @@ function(test) {
 
   // build trace first
   // sample data
-  var session = {id: 'sid'}; // aready registered in the previous test
+  var session = {id: 'sid'};
   var sampleTrace = {
     _id: "HvnxHFEBb3YzCT5Tg::sid",
     _lastEventId: null,
@@ -59,6 +59,8 @@ function(test) {
   var trace = traceStore.getTrace(browserId, clientId, type, id);
 
   var trace = JSON.stringify(trace);
+  console.log('trace', trace);
+  console.log('sessions', traceStore._registeredSessions);
   var expectedTrace = JSON.stringify(expectedTrace);
 
   test.equal(trace, expectedTrace);
