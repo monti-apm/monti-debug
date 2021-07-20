@@ -156,7 +156,8 @@ function(test) {
   var expectedTrace = JSON.stringify(expectedTrace);
 
   console.log('trace', trace);
-  console.log('sessions', traceStore._registeredSessions);
+  console.log('sessions', traceStore._sessionMapper);
+  console.log('trace list', traceStore.kdData.tracesColl.find({}, {fields: { _id: 1, type: 1 }}).fetch())
 
   test.equal(trace, expectedTrace);
 });
