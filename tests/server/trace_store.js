@@ -150,6 +150,7 @@ function(test) {
   expectedTrace.startTime = new Date(1439281811540);
   expectedTrace.totalValue = 5;
 
+  console.log('trace list - before', traceStore.kdData.tracesColl.find({}, {fields: { _id: 1, type: 1 }}).fetch())
   var trace = traceStore.getTrace(browserId, clientId, type, id);
   
   var trace = JSON.stringify(trace);
@@ -157,7 +158,7 @@ function(test) {
 
   console.log('trace', trace);
   console.log('sessions', traceStore._sessionMapper);
-  console.log('trace list', traceStore.kdData.tracesColl.find({}, {fields: { _id: 1, type: 1 }}).fetch())
+  console.log('trace list - after', traceStore.kdData.tracesColl.find({}, {fields: { _id: 1, type: 1 }}).fetch())
 
   test.equal(trace, expectedTrace);
 });
