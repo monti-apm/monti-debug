@@ -4,13 +4,13 @@ traceStore.start();
 // the data layer inserts traces in background without providing a way to know
 // when it is done. This retries until the trace is inserted
 function getTrace() {
-  let args = arguments;
+  var args = arguments;
   function attempt() {
     return traceStore.getTrace.apply(traceStore, args);
   }
 
-  for (let i = 0; i < 5; i++) {
-    let trace = attempt();
+  for (var i = 0; i < 5; i++) {
+    var trace = attempt();
     if (trace) {
       return trace;
     }
