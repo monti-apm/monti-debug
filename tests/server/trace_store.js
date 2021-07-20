@@ -155,6 +155,9 @@ function(test) {
   var trace = JSON.stringify(trace);
   var expectedTrace = JSON.stringify(expectedTrace);
 
+  console.log('trace', trace);
+  console.log('sessions', traceStore._registeredSessions);
+
   test.equal(trace, expectedTrace);
 });
 
