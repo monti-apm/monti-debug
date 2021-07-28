@@ -37,7 +37,7 @@ Package.onTest(function(api) {
 function configure(api) {
   api.export(['KadiraDebug', 'MontiDebug']);
 
-  api.versionsFrom('1.0');
+  api.versionsFrom('1.6');
   api.use('templating', {weak: true});
   api.use('underscore');
   api.use('random');
