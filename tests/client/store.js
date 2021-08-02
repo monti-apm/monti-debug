@@ -69,6 +69,8 @@ function(test, done) {
     console.log('timeout fired');
     completed();
     console.log('_getCurrentDataBlock');
+    console.dir(s._getCurrentDataBlock(trackTime));
+    console.log('key', key);
     var activity = s._getCurrentDataBlock(trackTime).activities[key];
     test.equal(_.pick(activity, 'type', 'name', 'count'), {
       type: type,
@@ -84,20 +86,28 @@ function(test, done) {
 });
 
 Tinytest.addAsync(
-'Store - trackActivity with multiple occurences', 
+'Store - trackActivity with multiple occurrences', 
 function(test, done) {
+  console.log('get store');
   var s = GetStore();
   var type = '__type';
   var name = '__name';
   var key = type + "::" + name;
   var trackTime = Date.now();
+  console.log('track activity');
   var completed = s.trackActivity(type, name);
 
   setTimeout(function() {
+    console.log('completing 1');
     completed();
+    console.log('track activity 2');
     completed = s.trackActivity(type, name);
     setTimeout(function() {
+      console.log('completing 2');
       completed();
+      console.log('_getCurrentDataBlock');
+      console.dir(s._getCurrentDataBlock(trackTime));
+      console.log('key', key);
       var activity = s._getCurrentDataBlock(trackTime).activities[key];
       test.equal(_.pick(activity, 'type', 'name', 'count'), {
         type: type,
