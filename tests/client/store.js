@@ -56,15 +56,19 @@ function(test, done) {
 Tinytest.addAsync(
 'Store - trackActivity', 
 function(test, done) {
+  console.log('getting store');
   var s = GetStore();
   var type = '__type';
   var name = '__name';
   var key = type + "::" + name;
   var trackTime = Date.now();
+  console.log('tracking activity');
   var completed = s.trackActivity(type, name);
 
   setTimeout(function() {
+    console.log('timeout fired');
     completed();
+    console.log('_getCurrentDataBlock');
     var activity = s._getCurrentDataBlock(trackTime).activities[key];
     test.equal(_.pick(activity, 'type', 'name', 'count'), {
       type: type,
@@ -73,6 +77,7 @@ function(test, done) {
     });
 
     test.isTrue(activity.elapsedTime >= 100);
+    console.log('done');
     done();
   }, 100);
 
