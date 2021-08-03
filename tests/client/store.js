@@ -69,7 +69,7 @@ function(test, done) {
     console.log('timeout fired');
     completed();
     console.log('_getCurrentDataBlock');
-    console.dir(s._getCurrentDataBlock(trackTime));
+    console.log(EJSON.stringify(s._getCurrentDataBlock(trackTime)));
     console.log('key', key);
     var activity = s._getCurrentDataBlock(trackTime).activities[key];
     test.equal(_.pick(activity, 'type', 'name', 'count'), {
@@ -106,7 +106,7 @@ function(test, done) {
       console.log('completing 2');
       completed();
       console.log('_getCurrentDataBlock');
-      console.dir(s._getCurrentDataBlock(trackTime));
+      console.log(JSON.stringify(s._getCurrentDataBlock(trackTime)));
       console.log('key', key);
       var activity = s._getCurrentDataBlock(trackTime).activities[key];
       test.equal(_.pick(activity, 'type', 'name', 'count'), {

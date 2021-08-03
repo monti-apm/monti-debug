@@ -21,6 +21,7 @@ Package.onTest(function(api) {
   api.use('templating');
   api.use('ddp');
   api.use('practicalmeteor:sinon@1.14.1_1');
+  api.use('ejson');
 
   api.addFiles('tests/utils.js', ['server', 'client']);
 
