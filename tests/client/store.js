@@ -61,11 +61,11 @@ function(test, done) {
   var type = '__type';
   var name = '__name';
   var key = type + "::" + name;
-  var trackTime = Date.now();
   console.log('tracking activity');
   var completed = s.trackActivity(type, name);
 
   setTimeout(function() {
+    var trackTime = Date.now();
     console.log('timeout fired');
     completed();
     console.log('_getCurrentDataBlock');
@@ -93,11 +93,11 @@ function(test, done) {
   var type = '__type';
   var name = '__name';
   var key = type + "::" + name;
-  var trackTime = Date.now();
   console.log('track activity');
   var completed = s.trackActivity(type, name);
 
   setTimeout(function() {
+    var trackTime = Date.now();
     console.log('completing 1');
     completed();
     console.log('track activity 2');
