@@ -1,10 +1,15 @@
 {
+  "lockfileVersion": 1,
   "dependencies": {
     "lru-cache": {
-      "version": "2.6.5"
+      "version": "2.6.5",
+      "resolved": "https://registry.npmjs.org/lru-cache/-/lru-cache-2.6.5.tgz",
+      "integrity": "sha1-5W1jVBSO3o13B7WNFDIg/QjfD9U="
     },
     "ua-parser-js": {
-      "version": "0.7.7"
+      "version": "0.7.7",
+      "resolved": "https://registry.npmjs.org/ua-parser-js/-/ua-parser-js-0.7.7.tgz",
+      "integrity": "sha1-cFVUzH6Ov91ux1Wq0TgtGai4yK4="
     }
   }
 }

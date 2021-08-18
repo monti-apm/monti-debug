@@ -39,7 +39,7 @@ function configure(api) {
   api.export(['KadiraDebug', 'MontiDebug']);
 
   api.versionsFrom('1.6');
-  api.use('templating', {weak: true});
+  api.use('templating@1.3.0', {weak: true});
   api.use('underscore');
   api.use('random');
   api.use('check');

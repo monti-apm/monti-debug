@@ -1,5 +1,13 @@
 # Change Log
 
+### v3.3.0
+July 19, 2021
+
+* Rename to montiapm:debug
+* Add MontiDebug export as alias to KadiraDebug
+* Replace `meteorhacks:kadira` with `montiapm:agent`
+* Fix compatibility with Meteor 1.11 and newer
+
 ### v3.2.2
 23-March-2016
 
