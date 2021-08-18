@@ -8,6 +8,8 @@ Monti Debug **helps** you to identify what's happening behind your Meteor app in
 
 It'll also help you to **fix** hard to debug UI issues.
 
+Compatible with Meteor 1.6 and newer.
+
 This package is based on [`kadira:debug`](https://github.com/kadirahq/meteor-debug).
 
 ## Getting Started
