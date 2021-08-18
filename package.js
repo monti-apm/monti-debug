@@ -21,6 +21,7 @@ Package.onTest(function(api) {
   api.use('templating');
   api.use('ddp');
   api.use('practicalmeteor:sinon@1.14.1_1');
+  api.use('ejson');
 
   api.addFiles('tests/utils.js', ['server', 'client']);
 
@@ -37,7 +38,7 @@ Package.onTest(function(api) {
 function configure(api) {
   api.export(['KadiraDebug', 'MontiDebug']);
 
-  api.versionsFrom('1.0');
+  api.versionsFrom('1.6');
   api.use('templating', {weak: true});
   api.use('underscore');
   api.use('random');
@@ -47,7 +48,7 @@ function configure(api) {
   api.use('mongo');
   api.use('tracker');
   api.use('localstorage');
-  api.use('montiapm:agent@2.44.0', 'server');
+  api.use('montiapm:agent@2.44.1', 'server');
   api.use('kadira:flow-router@2.0.0', {weak:true});
   api.use('kadira:flow-router-ssr@3.0.0', {weak:true});
   api.use('iron:router@1.0.0', {weak:true});

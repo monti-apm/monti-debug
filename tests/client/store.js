@@ -60,10 +60,10 @@ function(test, done) {
   var type = '__type';
   var name = '__name';
   var key = type + "::" + name;
-  var trackTime = Date.now();
   var completed = s.trackActivity(type, name);
 
   setTimeout(function() {
+    var trackTime = Date.now();
     completed();
     var activity = s._getCurrentDataBlock(trackTime).activities[key];
     test.equal(_.pick(activity, 'type', 'name', 'count'), {
@@ -85,10 +85,10 @@ function(test, done) {
   var type = '__type';
   var name = '__name';
   var key = type + "::" + name;
-  var trackTime = Date.now();
   var completed = s.trackActivity(type, name);
 
   setTimeout(function() {
+    var trackTime = Date.now();
     completed();
     completed = s.trackActivity(type, name);
     setTimeout(function() {

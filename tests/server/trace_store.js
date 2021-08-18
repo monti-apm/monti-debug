@@ -1,6 +1,25 @@
 var traceStore = new TraceStore({kdData: KdData});
 traceStore.start();
 
+// the data layer inserts traces in background without providing a way to know
+// when it is done. This retries until the trace is inserted
+function getTrace() {
+  let args = arguments;
+  function attempt() {
+    return traceStore.getTrace.apply(traceStore, args);
+  }
+
+  for (let i = 0; i < 5; i++) {
+    let trace = attempt();
+    if (trace) {
+      return trace;
+    }
+
+    new Promise(resolve => setTimeout(resolve, 50)).await();
+  }
+}
+
+
 Tinytest.add(
 'Server - TraceStore - registerSession',
 function(test) {
@@ -56,7 +75,7 @@ function(test) {
   expectedTrace.startTime = new Date(1439281811540);
   expectedTrace.totalValue = 5;
 
-  var trace = traceStore.getTrace(browserId, clientId, type, id);
+  var trace = getTrace(browserId, clientId, type, id);
 
   var trace = JSON.stringify(trace);
   var expectedTrace = JSON.stringify(expectedTrace);
@@ -100,7 +119,7 @@ function(test) {
   var type = 'method';
   var id = 'dideid';
 
-  var trace = traceStore.getTrace(browserId, clientId, type, id);
+  var trace = getTrace(browserId, clientId, type, id);
   test.equal(trace, undefined);
 });
 
@@ -148,7 +167,7 @@ function(test) {
   expectedTrace.startTime = new Date(1439281811540);
   expectedTrace.totalValue = 5;
 
-  var trace = traceStore.getTrace(browserId, clientId, type, id);
+  var trace = getTrace(browserId, clientId, type, id);
   
   var trace = JSON.stringify(trace);
   var expectedTrace = JSON.stringify(expectedTrace);
@@ -193,7 +212,7 @@ function(test) {
   var type = 'pubsub';
   var id = 'ridsid';
 
-  var trace = traceStore.getTrace(browserId, clientId, type, id);
+  var trace = getTrace(browserId, clientId, type, id);
   test.equal(trace, undefined);
 });
 
