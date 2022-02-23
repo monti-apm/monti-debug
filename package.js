@@ -1,6 +1,6 @@
 Package.describe({
   summary: 'Full Stack Debugging Solution for Meteor',
-  version: '3.3.0',
+  version: '3.3.1',
   git: 'https://github.com/monti-apm/meteor-debug.git',
   name: "montiapm:debug"
 });

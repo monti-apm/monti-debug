@@ -1,5 +1,10 @@
 # Change Log
 
+### v3.3.1
+Febryary 23, 2022
+
+* Fix compatibility with Meteor 2.6
+
 ### v3.3.0
 July 19, 2021
 
