@@ -36,7 +36,37 @@ If you'd like to learn more about the Monti Debug UI and how to interpret it, wa
 
 You can even debug your production Meteor app with Monti Debug.
 
-In order to allow secure communication, you need to configure your app with a key when you are deploying your app. [Click here](https://web.archive.org/web/20170227082914/http://support.kadira.io/knowledgebase/articles/808611-configuring-kadira-debug-for-production-app) to learn more about it.
+#### Add a debug auth key to your app
+
+Debug auth key is a key which used to authenticate the Monti debug session. Once you configured, you can enter this key before starting a new Monti debug session on your production app.
+
+>You must add this key to your app, otherwise Monti Debug won't work in production.
+
+Adding the debug auth key is simple. You've two options:
+
+1. Using Environment Variables
+
+Simply expose following environment variables in your production deployment:
+
+```bash
+MONTI_DEBUG_AUTH_KEY=<your very long password>
+```
+
+>`KADIRA_DEBUG_AUTH_KEY` is also avaible for backwards compatibility
+
+2. Using Meteor Settings
+
+You can also use Meteor Settings to configure the debug auth key. This is how to do it:
+
+```js
+{
+  monti: {
+    debug: {
+      authKey: "<your very long key>"
+    }
+  }
+}
+```
 
 After that, you can use Monti Debug to debug your app and **share** your debugging session with your teammates.
 
