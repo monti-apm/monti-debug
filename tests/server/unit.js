@@ -15,12 +15,12 @@ Tinytest.addAsync(
   'Server - Utils.getDebugAuthKey - get key from Meteor.settings', 
   function(test, done) {
     var key = Random.id();
-    var originalKadira = Meteor.settings.kadira;
-    Meteor.settings.kadira = { debug: {authKey: key } };
+    var originalKadira = Meteor.settings.monti;
+    Meteor.settings.monti = { debug: {authKey: key } };
     var keyReceived = Utils.getDebugAuthKey();
 
     test.equal(keyReceived, key);
-    Meteor.settings.kadira = originalKadira;
+    Meteor.settings.monti = originalKadira;
     done();
   }
 );
