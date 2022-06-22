@@ -12,15 +12,29 @@ Tinytest.addAsync(
 );
 
 Tinytest.addAsync(
-  'Server - Utils.getDebugAuthKey - get key from Meteor.settings', 
+  'Server - Utils.getDebugAuthKey - get key from Meteor.settings.monti', 
   function(test, done) {
     var key = Random.id();
-    var originalKadira = Meteor.settings.monti;
+    var originalMonti = Meteor.settings.monti;
     Meteor.settings.monti = { debug: {authKey: key } };
     var keyReceived = Utils.getDebugAuthKey();
 
     test.equal(keyReceived, key);
-    Meteor.settings.monti = originalKadira;
+    Meteor.settings.monti = originalMonti;
+    done();
+  }
+);
+
+Tinytest.addAsync(
+  'Server - Utils.getDebugAuthKey - get key from Meteor.settings.kadira', 
+  function(test, done) {
+    var key = Random.id();
+    var originalKadira = Meteor.settings.kadira;
+    Meteor.settings.kadira = { debug: {authKey: key } };
+    var keyReceived = Utils.getDebugAuthKey();
+
+    test.equal(keyReceived, key);
+    Meteor.settings.kadira = originalKadira;
     done();
   }
 );
