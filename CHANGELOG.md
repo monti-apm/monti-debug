@@ -1,7 +1,13 @@
 # Change Log
 
+### v3.3.2
+June 22, 2022
+
+* Support `monti` object in Meteor settings. The `kadira` object can still be used for backwards compatibility
+* Add `MONTI_DEBUG_AUTH_KEY` env var, which can be used instead of `KADIRA_DEBUG_AUTH_KEY`
+
 ### v3.3.1
-Febryary 23, 2022
+February 23, 2022
 
 * Fix compatibility with Meteor 2.6
 
