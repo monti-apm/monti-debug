@@ -21,7 +21,7 @@ meteor add montiapm:debug
 ~~~
 
 * Then run your app. (Let's assume your app runs on port 3000)
-* After that, visit <https://app.montiapm.com/debug>
+* After that, visit <https://debug.montiapm.com>
 * Then connect to `http://localhost:3000` from the Monti Debug UI
 
 Now, you'll be able to see what's happening in your app as you interact with your app.
@@ -30,7 +30,7 @@ Now, you'll be able to see what's happening in your app as you interact with you
 
 If you'd like to learn more about the Monti Debug UI and how to interpret it, watch the following video:
 
-[![](https://cldup.com/eDEvWF2VMT.png)](https://www.youtube.com/watch?v=lrAYlayAWMI)
+[![](MontiDebug.png)](https://www.youtube.com/watch?v=lrAYlayAWMI)
 
 ### Using With Production Apps
 
@@ -86,20 +86,20 @@ Not necessarily. Monti Debug collects, aggregates and sends data in an efficient
 
 Monti Debug simply connects to your app and get information and display it to you. In production, it's protected with a secret key. Monti Debug only connects to apps running on localhost, or are available over HTTPS.
 
-#### It seems like Monti APM can access all my data. Isn't it?
+#### It seems like [Monti APM](https://montiapm.com/) can access all my data. Isn't it?
 
-Nope. The Monti Debug data is stored in two small capped collections (50mb each) in your MongoDB database, and this data won't be sent to Monti APM for any reason. The Monti Debug management console simply connects to your app using DDP so that you can access that data.
+Nope. The Monti Debug data is stored in two small capped collections (50mb each) in your MongoDB database, and this data won't be sent to [Monti APM](https://montiapm.com/) for any reason. The Monti Debug management console simply connects to your app using DDP so that you can access that data.
 (Monti Debug management console is a 100% client-side app.)
 
-So, your data remain with your app and Monti APM can't see any of it. You can take a look at this Meteor package for more information.
+So, your data remain with your app and [Monti APM](https://montiapm.com/) can't see any of it. You can take a look at this Meteor package for more information.
 
 #### Is it open source?
 
 Yes and No. Checkout this repo. It's the core of Monti Debug and how we collect data. It's open source under MIT. But, our Monti Debug UI is not open source.
 
-#### What if I don't have a Monti APM Account?
+#### What if I don't have a [Monti APM](https://montiapm.com/) Account?
 
-You don't need to have a Monti APM or Meteor Account to use Monti Debug. But, you should try to create an account :)
+You don't need to have a [Monti APM](https://montiapm.com/) or Meteor Account to use Monti Debug. But, you should try to [create an account](https://app.montiapm.com/sign-up) :)
 
 #### Does it work with Nitrous.io or in the cloud development environments?
 
